@@ -13,6 +13,8 @@ https://docs.ros.org/en/rolling/Installation/Alternatives/macOS-Development-Setu
 
 - OpenGL compatibility (RViz, OGRE, etc.)
 
+- Builds with Apple SIP System Integrity Protection ENABLED
+
 - Manual patching of vendor packages (eg., assimp, ogre) to ensure Darwin support
 
 - Tested with all fixes applied while building/running on MacOS 12.7.6 Monterey
