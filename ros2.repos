@@ -393,8 +393,8 @@ repositories:
     version: rolling
   ros2/rviz:
     type: git
-    url: https://github.com/ros2/rviz.git
-    version: rolling
+    url: https://github.com/artcore-c/rviz/tree/Fix/Linker-Path-MacOS-x86_64
+    version: Fix/Linker-Path-MacOS-x86_64
   ros2/spdlog_vendor:
     type: git
     url: https://github.com/ros2/spdlog_vendor.git
