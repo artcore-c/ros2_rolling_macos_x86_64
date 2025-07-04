@@ -36,5 +36,5 @@ To prepare your environment for ROS 2 `vcs import` on macOS (Python 3.11), run t
 ```bash
 git clone https://github.com/dirk-thomas/vcstool.git
 cd vcstool
-/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip install -e .
+/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip install -e .```
 
