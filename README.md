@@ -109,3 +109,27 @@ cd ..
 git clone https://github.com/ros2/pybind11_vendor.git ros2/pybind11_vendor
 ```
 
+## ⚠️ Note on Build Reproducibility
+
+Building ros2_rolling on our 2014 Mac mini (macOS x86_64) was far from trivial. 
+Although we achieved a full, error-free build, retracing and documenting every step — including required patches, 
+module forks, and dependency workarounds — remains an ongoing effort.
+
+This repository is not yet complete, but actively maintained. 
+
+## We are incrementally:
+
+Publishing forks of modules/submodules that required changes.
+
+Documenting all dependencies — whether installed via MacPorts, pip, 
+or built from source (including transitive dependencies).
+
+Preparing an updated ros2.repos file that redirects to our fixed forks.
+
+Once finalized, setting up ros2_rolling will be as simple as replacing the stock ros2.repos file with ours, 
+followed by a clean build on macOS x86_64.
+
+Stay tuned — we’ll announce when the full instructions and repository references are complete.
+
+
+
