@@ -29,7 +29,7 @@ Note: ARM64/Apple Silicon has not been tested and is not officially supported in
 // SPDX-License-Identifier: Apache-2.0 //
 
 
-## Setup
+## Initial Setup
 
 To prepare your environment for ROS 2 `vcs import` on macOS (Python 3.11), run the following:
 
@@ -107,6 +107,25 @@ cd ..
 
 # 7. pybind11_vendor
 git clone https://github.com/ros2/pybind11_vendor.git ros2/pybind11_vendor
+```
+
+# Set up a virtual environment for ros2_rolling
+```bash
+python3.11 -m venv ~/ros2_venv
+source ~/ros2_venv/bin/activate
+```
+Install core ROS 2 Python dependencies
+```bash
+pip install -U pip setuptools wheel
+pip install colcon-common-extensions empy pybind11 PyYAML
+```
+Add MacOS GUI support for ROS 2 Python 
+```bash
+pip install \
+  argcomplete importlib_metadata setuptools_scm \
+  lxml ifcfg pytest pytest-cov mypy \
+  catkin-pkg coverage matplotlib numpy \
+  PyQt5 pycairo PyGObject
 ```
 
 ## ⚠️ Note on Build Reproducibility
