@@ -116,22 +116,25 @@ Although we eventually achieved a fully complete, error-free build, without ommi
 retracing and documenting every step — including many required patches, 
 module forks, and dependency workarounds — remains an ongoing effort...
 
-Therefore, it should be noted: This repository is not yet complete, but actively maintained. 
+As such, this repository is not yet complete, though it is actively maintained.
 
 ## We are incrementally:
 
-Publishing forks of modules/submodules that required changes.
+Publishing forks of modules/submodules that required changes
 
-Documenting all dependencies — whether installed via MacPorts, pip, 
-or built from source (including transitive dependencies).
+Documenting all dependencies — whether installed via MacPorts, pip, or built from source (including transitive dependencies)
 
-Preparing an updated ros2.repos file that redirects to our fixed forks.
+Preparing an updated ros2.repos file pointing to our corrected forks
 
-Once finalized, setting up ros2_rolling will be as simple as replacing the official ros2.repos file with the ammended file included in this repo, 
-followed by a clean build on MacOS x86_64.
+Once complete, setup will be as simple as replacing the official ros2.repos file with our amended version, then performing a clean build.
 
-If you see new commits, those would likely reflect updates while we are working towards our goal.
-Stay tuned — we’ll announce when the full instructions and repository references are complete.
+## Progress:
+
+If you see new commits, they likely reflect updates as we move toward that goal. 
+
+Stay tuned — we’ll announce when the repository and all build instructions are finalized.
+
+
 
 
 
