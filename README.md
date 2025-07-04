@@ -125,7 +125,7 @@ pip install \
   argcomplete importlib_metadata setuptools_scm \
   lxml ifcfg pytest pytest-cov mypy \
   catkin-pkg coverage matplotlib numpy \
-  PyQt5 pycairo PyGObject
+  PyQt5 pycairo
 ```
 
 ## ⚠️ Note on Build Reproducibility
