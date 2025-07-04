@@ -38,5 +38,13 @@ git clone https://github.com/dirk-thomas/vcstool.git
 cd vcstool
 /Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip install -e .
 ```
+Ensure the installed script is accessible via `PATH:`
+```bash
+which vcs
+```
+You should see something like:
+```bash
+/Library/Frameworks/Python.framework/Versions/3.11/bin/vcs
+```
 
 
