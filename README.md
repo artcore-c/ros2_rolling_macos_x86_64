@@ -128,6 +128,36 @@ pip install \
   PyQt5 pycairo
 ```
 
+## Installing PyGObject (via MacPorts)
+ROS 2 packages requiring gi.repository (like GObject, Gtk, etc.) work best (we have found for mac x86_64) when using the MacPorts build of PyGObject rather than installing from PyPI.
+
+1. Install PyGObject and GObject Introspection bindings:
+```bash
+sudo port install py311-gobject3 gobject-introspection
+```
+2. Bridge MacPorts Python into your venv:
+If you're using a Python 3.11 virtual environment (e.g. `ros2_venv_dev`), add the following `.pth` file:
+```bash
+echo "/opt/local/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages" > \
+  ~/ros2_venv_dev/lib/python3.11/site-packages/macports.pth
+```
+This allows your venv to see MacPorts-installed Python packages.
+
+3. Set required environment variables (at build/runtime):
+```bash
+export GI_TYPELIB_PATH=/opt/local/lib/girepository-1.0:$GI_TYPELIB_PATH
+```
+Optional: If needed by your build system or meson, also export:
+```bash
+export PKG_CONFIG_PATH=/opt/local/lib/pkgconfig:/opt/local/share/pkgconfig
+export LD_LIBRARY_PATH=/opt/local/lib
+```
+4. Test:
+```bash
+python3 -c "from gi.repository import GObject; print(GObject)"
+```
+You should see a successful import and symbol print.
+
 ## ⚠️ Note on Build Reproducibility
 
 Building ros2_rolling, inclusive of all it's 369 total parts on our 2014 Intel Mac mini (x86_64) was not trivial. 
