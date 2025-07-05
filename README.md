@@ -125,7 +125,7 @@ pip install \
   argcomplete importlib_metadata setuptools_scm \
   lxml ifcfg pytest pytest-cov mypy \
   catkin-pkg coverage matplotlib numpy \
-  PyQt5 pycairo
+  PyQt5 pycairo pytest
 ```
 
 ## Installing PyGObject (via MacPorts)
@@ -157,6 +157,13 @@ export LD_LIBRARY_PATH=/opt/local/lib
 python3 -c "from gi.repository import GObject; print(GObject)"
 ```
 You should see a successful import and symbol print.
+
+## Installing `setuptools==78.1.1` (via MacPorts)
+We found that downgrading newer setuptools versions (especially ≥80.0)
+to version 78.1.1 (via MacPorts) resolves ament_lint build errors, likely due to stricter PEP 517/660 python packaging standards in later versions.
+```bash
+sudo port install py311-setuptools @78.1.1_0
+```
 
 ## ⚠️ Note on Build Reproducibility
 
