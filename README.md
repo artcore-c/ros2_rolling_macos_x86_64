@@ -125,9 +125,12 @@ pip install \
   argcomplete importlib_metadata setuptools_scm \
   lxml ifcfg pytest pytest-cov mypy \
   catkin-pkg coverage matplotlib numpy \
-  PyQt5 pycairo
+  PyQt5 pycairo pytest-repeat pytest-rerunfailures 
 ```
-
+And specifically to avoid `rosidl_generator_py` errors
+```bash
+pip install 'lark-parser==0.12.0'
+```
 ## Installing PyGObject (via MacPorts)
 ROS 2 packages requiring gi.repository (like GObject, Gtk, etc.) work best (we have found for mac x86_64) when using the MacPorts build of PyGObject rather than installing from PyPI.
 
