@@ -167,6 +167,24 @@ to version 78.1.1 (via MacPorts) resolves ament_lint build errors, likely due to
 ```bash
 sudo port install py311-setuptools @78.1.1_0
 ```
+## Begin build
+This will build up to `cyclonedds`...
+```bash
+colcon build --symlink-install
+```
+Due to incomplete install behavior of some Iceoryx components, a manual fix is required before building cyclonedds.
+## Manually install libiceoryx_platform.dylib
+```bash
+mkdir -p ~/ros2_rolling/install/iceoryx_platform/lib
+
+cp ~/ros2_rolling/build/iceoryx_hoofs/platform/libiceoryx_platform.dylib \
+   ~/ros2_rolling/install/iceoryx_platform/lib/
+```
+Rebuild cyclonedds
+```bash
+colcon build --symlink-install --packages-select cyclonedds
+```
+This ensures all dependent libraries (e.g., `libiceoryx_binding_c`, `libiceoryx_posh`, `libiceoryx_hoofs`, `libiceoryx_platform`) resolve correctly without editing @rpath.
 
 ## ⚠️ Note on Build Reproducibility
 
