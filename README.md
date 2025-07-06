@@ -59,57 +59,16 @@ This is due to the Python 3.11 framework install not trusting system certificate
 ```bash
 /Applications/Python\ 3.11/Install\ Certificates.command
 ```
-### After ensuring you have python 3.11.9 from `python.org` and all dependencies* installed,
+## After ensuring you have python 3.11.9 from `python.org` and all dependencies* installed,
  you can run the following
 
 ```bash
+mkdir -p ~/ros2_rolling/src
 cd ~/ros2_rolling
 vcs import --input https://raw.githubusercontent.com/ros2/ros2/rolling/ros2.repos src
 ```
-### Recovering from `vcs import` TLS or SSL errors
+## Set up a virtual environment for ros2_rolling
 
-If `vcs import` fails to clone certain repositories due to TLS or certificate errors, 
-then manually clone the affected modules into their correct paths within `~/ros2_rolling/src`, 
-then rerun `vcs import` to validate all modules are in place.
-
-```bash
-cd ~/ros2_rolling/src
-
-# 1. ament_lint
-mkdir -p ament && cd ament
-git clone https://github.com/ament/ament_lint.git
-cd ..
-
-# 2. Fast-CDR
-mkdir -p eProsima && cd eProsima
-git clone https://github.com/eProsima/Fast-CDR.git
-cd ..
-
-# 3. iceoryx
-mkdir -p eclipse-iceoryx && cd eclipse-iceoryx
-git clone https://github.com/eclipse-iceoryx/iceoryx.git
-cd ..
-
-# 4. rqt_console
-mkdir -p ros-visualization && cd ros-visualization
-git clone https://github.com/ros-visualization/rqt_console.git
-cd ..
-
-# 5. urdfdom_headers
-mkdir -p ros && cd ros
-git clone https://github.com/ros/urdfdom_headers.git
-cd ..
-
-# 6. message_filters
-mkdir -p ros2 && cd ros2
-git clone https://github.com/ros2/message_filters.git
-cd ..
-
-# 7. pybind11_vendor
-git clone https://github.com/ros2/pybind11_vendor.git ros2/pybind11_vendor
-```
-
-# Set up a virtual environment for ros2_rolling
 ```bash
 python3.11 -m venv ~/ros2_venv
 source ~/ros2_venv/bin/activate
