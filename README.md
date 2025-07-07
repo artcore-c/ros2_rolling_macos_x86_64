@@ -127,7 +127,7 @@ to version 78.1.1 (via MacPorts) resolves ament_lint build errors, likely due to
 sudo port install py311-setuptools @78.1.1_0
 ```
 ## Begin build
-This will build up to `cyclonedds`...
+This will build up to `rviz_ogre_vendor`...
 ```bash
 colcon build --symlink-install
 ```
