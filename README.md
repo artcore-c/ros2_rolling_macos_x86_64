@@ -48,7 +48,7 @@ You should see something like:
 ```
 ## Troubleshooting
 
-### Python 3.11 SSL Certificate Error on macOS
+## Python 3.11 SSL Certificate Error on macOS
 
 If you encounter this error during `vcs import`:
 <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)>
